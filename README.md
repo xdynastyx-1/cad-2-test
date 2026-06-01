@@ -1,4 +1,3 @@
-# cad-2-testconst DISCORD_WEBHOOK_URL = "PASTE_DISCORD_WEBHOOK_URL_HERE";
 const state = { activities: JSON.parse(localStorage.getItem('natproActivities') || '[]') };
 
 const navButtons = document.querySelectorAll('[data-view]');
