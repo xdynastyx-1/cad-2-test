@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Dispatch Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Security Dispatch Portal</h1>
+    <button id="menuToggle">☰ Menu</button>
+</header>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <button class="nav-item active" data-view="dashboard">Dashboard</button>
+        <button class="nav-item" data-view="clock">Clock In/Out</button>
+        <button class="nav-item" data-view="dar">DAR</button>
+        <button class="nav-item" data-view="incident">Incident</button>
+        <button class="nav-item" data-view="trespass">Trespass</button>
+    </aside>
+
+    <main>
+
+        <section id="dashboard" class="view active-view">
+            <h2>Dashboard</h2>
+
+            <p>Status: <strong id="currentStatus">Available</strong></p>
+
+            <button onclick="setStatus('Available')">Available</button>
+            <button onclick="setStatus('Patrolling')">Patrolling</button>
+            <button onclick="setStatus('On Break')">On Break</button>
+
+            <hr>
+
+            <button id="emergencyBtn" class="emergency">
+                Emergency Alert
+            </button>
+
+            <h3>Recent Activity</h3>
+            <ul id="activityList"></ul>
+        </section>
+
+        <section id="clock" class="view">
+            <h2>Clock In / Out</h2>
+
+            <form id="clockForm">
+                <input name="officer" placeholder="Officer Name" required>
+                <input name="site" placeholder="Site Name" required>
+
+                <select name="action">
+                    <option>Clock In</option>
+                    <option>Clock Out</option>
+                </select>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="dar" class="view">
+            <h2>Daily Activity Report</h2>
+
+            <form id="darForm">
+                <input name="officer" placeholder="Officer Name" required>
+                <input name="site" placeholder="Site Name" required>
+
+                <textarea
+                    name="summary"
+                    placeholder="Activity Summary"
+                    required></textarea>
+
+                <button type="submit">Submit DAR</button>
+            </form>
+        </section>
+
+        <section id="incident" class="view">
+            <h2>Incident Report</h2>
+
+            <form id="incidentForm">
+                <input name="site" placeholder="Site Name" required>
+                <input name="type" placeholder="Incident Type" required>
+
+                <textarea
+                    name="details"
+                    placeholder="Incident Details"
+                    required></textarea>
+
+                <button type="submit">Submit Incident</button>
+            </form>
+        </section>
+
+        <section id="trespass" class="view">
+            <h2>Trespass Report</h2>
+
+            <form id="trespassForm">
+                <input name="site" placeholder="Site Name" required>
+                <input name="subject" placeholder="Subject Name" required>
+                <input name="reason" placeholder="Reason for Trespass" required>
+
+                <button type="submit">Submit Trespass</button>
+            </form>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
